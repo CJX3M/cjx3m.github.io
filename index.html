@@ -1,7 +1,302 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Carlos Julian Lopez · Senior Full-Stack Engineer</title>
+<meta name="description" content="Senior Full-Stack Software Engineer with 19 years of experience in .NET, TypeScript, React and cloud (Azure, AWS, GCP).">
+<style>
+:root{
+  --bg:#fafaf9; --fg:#1c1917; --muted:#78716c; --line:#e7e5e4; --card:#fff; --accent:#0f766e;
+  --max:760px;
+}
+@media (prefers-color-scheme:dark){
+  :root{--bg:#0c0a09; --fg:#f5f5f4; --muted:#a8a29e; --line:#292524; --card:#171412; --accent:#5eead4}
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.65 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration-color:var(--accent);text-underline-offset:3px}
+a:hover{color:var(--accent)}
+.wrap{max-width:var(--max);margin:0 auto;padding:0 20px}
+header.top{position:sticky;top:0;background:color-mix(in srgb,var(--bg) 88%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line);z-index:10}
+header.top .wrap{display:flex;justify-content:space-between;align-items:center;height:56px}
+.brand{font-weight:600;text-decoration:none}
+nav a{margin-left:18px;font-size:.9rem;color:var(--muted);text-decoration:none}
+nav a:hover{color:var(--fg)}
+.hero{padding:88px 0 56px}
+.hero h1{font-size:clamp(2.2rem,6vw,3.4rem);line-height:1.1;margin:0 0 12px;letter-spacing:-.02em}
+.hero p.lead{font-size:1.15rem;color:var(--muted);max-width:56ch;margin:0 0 28px}
+.stats{display:flex;gap:36px;flex-wrap:wrap;margin:0 0 28px;padding:0;list-style:none}
+.stats b{display:block;font-size:2rem;line-height:1.1;color:var(--accent)}
+.stats span{font-size:.85rem;color:var(--muted)}
+.links a{display:inline-block;margin-right:10px;padding:8px 16px;border:1px solid var(--line);border-radius:999px;font-size:.9rem;text-decoration:none}
+.links a.primary{background:var(--fg);color:var(--bg);border-color:var(--fg)}
+.links a:hover{border-color:var(--accent)}
+section{padding:48px 0;border-top:1px solid var(--line)}
+h2{font-size:.8rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin:0 0 28px;font-weight:600}
+.job{display:grid;grid-template-columns:150px 1fr;gap:8px 28px;margin-bottom:36px}
+.job .when{color:var(--muted);font-size:.88rem;padding-top:3px}
+.job h3{margin:0;font-size:1.05rem}
+.job .org{color:var(--accent);font-size:.95rem;margin-bottom:6px}
+.job ul{margin:8px 0 0;padding-left:18px;color:var(--muted)}
+.job li{margin-bottom:4px}
+.tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px;padding:0;list-style:none}
+.tags li{font-size:.78rem;padding:2px 10px;border:1px solid var(--line);border-radius:999px;color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px;transition:border-color .2s,transform .2s}
+.card:hover{border-color:var(--accent);transform:translateY(-2px)}
+.card h3{margin:0 0 6px;font-size:1rem}
+.card p{margin:0 0 10px;font-size:.9rem;color:var(--muted)}
+.card a.more{font-size:.85rem}
+.skills dt{font-weight:600;font-size:.9rem;margin-top:16px}
+.skills dd{margin:2px 0 0;color:var(--muted)}
+.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px;padding:0;list-style:none;margin:0}
+.badges li{padding:12px 14px;border:1px solid var(--line);border-radius:10px;font-size:.9rem;background:var(--card)}
+.badges small{display:block;color:var(--muted)}
+footer{padding:40px 0 64px;color:var(--muted);font-size:.85rem;border-top:1px solid var(--line)}
+
+/* scroll reveal: sutil, solo si hay JS y el usuario no pidio menos movimiento */
+.js .reveal{opacity:0;transform:translateY(14px);transition:opacity .6s ease,transform .6s ease}
+.js .reveal.in{opacity:1;transform:none}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .js .reveal{opacity:1;transform:none;transition:none}
+}
+.avatar{width:112px;height:112px;border-radius:50%;object-fit:cover;border:1px solid var(--line);margin-bottom:20px;display:block}
+
+/* impresion / "Save as PDF": CV limpio de la misma pagina */
+@media print{
+  :root{--bg:#fff;--fg:#111;--muted:#444;--line:#ddd;--card:#fff;--accent:#0f766e}
+  header.top,footer,.links,#projects .more{display:none}
+  .js .reveal{opacity:1!important;transform:none!important}
+  .hero{padding:0 0 16px}
+  .avatar{width:80px;height:80px}
+  section{padding:20px 0;break-inside:auto}
+  .job,.card{break-inside:avoid}
+  details>*{display:block}
+  a{text-decoration:none}
+  @page{margin:14mm}
+}
+@media (max-width:620px){
+  .job{grid-template-columns:1fr}
+  nav a:nth-child(n+4){display:none}
+  .hero{padding-top:56px}
+}
+</style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top">Carlos Lopez</a>
+    <nav>
+      <a href="#experience">Experience</a>
+      <a href="#projects">Projects</a>
+      <a href="#skills">Skills</a>
+      <a href="#credentials">Credentials</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top" class="wrap">
+  <section class="hero" style="border:0">
+    <img class="avatar" src="photo.jpg" width="112" height="112" alt="Carlos Julian Lopez">
+    <h1>Carlos Julian Lopez</h1>
+    <p class="lead">Senior Full-Stack Engineer and former Tech Lead. I build and modernize enterprise systems in .NET, TypeScript and React, deployed on Azure, AWS and Google Cloud.</p>
+    <ul class="stats">
+      <li><b data-since="2007">19+</b><span>years in software</span></li>
+      <li><b>3</b><span>clouds: Azure, AWS, GCP</span></li>
+      <li><b>Banking · Health · Logistics</b><span>industries served</span></li>
+    </ul>
+    <div class="links">
+      <a class="primary" href="mailto:cjlc@hotmail.com">Get in touch</a>
+      <a href="https://github.com/CJX3M">GitHub</a>
+      <a href="https://www.linkedin.com/in/carlosjlopezc/">LinkedIn</a>
+      <a href="#" onclick="window.print();return false">Save as PDF</a>
+    </div>
+  </section>
+
+  <section id="experience">
+    <h2 class="reveal">Experience</h2>
+
+    <article class="job reveal">
+      <div class="when">May 2025 – Present</div>
+      <div>
+        <h3>Senior Full-Stack Software Engineer</h3>
+        <div class="org">Tech Mahindra · EY</div>
+        <ul>
+          <li>Maintain and extend the platform used to create, edit and publish annual tax-audit forms for EY clients.</li>
+          <li>Evolve a .NET API built with CQRS and three cooperating React UIs: form content, form details and form layout.</li>
+        </ul>
+        <ul class="tags"><li>.NET</li><li>CQRS</li><li>React</li></ul>
+      </div>
+    </article>
+
+    <article class="job reveal">
+      <div class="when">Jan 2025 – Apr 2025</div>
+      <div>
+        <h3>Sr. Software Engineer</h3>
+        <div class="org">Paystand</div>
+        <ul>
+          <li>Built an audit tool that locates a processed payment inside the private and public blockchain from its transaction hash.</li>
+        </ul>
+        <ul class="tags"><li>TypeScript</li><li>Blockchain</li><li>Ganache</li></ul>
+      </div>
+    </article>
+
+    <article class="job reveal">
+      <div class="when">Sep 2021 – Sep 2024</div>
+      <div>
+        <h3>Sr. Tech Lead</h3>
+        <div class="org">Distillery Tech · City National Bank</div>
+        <ul>
+          <li>Led a team building a serverless cloud service that processes bank money-transfer messages from MQ.</li>
+          <li>Services in .NET 8 on Azure Functions with CI/CD, DynamoDB storage and Event Hub for event sharing.</li>
+          <li>Migrated legacy .NET Framework 4.5 applications to .NET 8 with Blazor.</li>
+        </ul>
+        <ul class="tags"><li>.NET 8</li><li>Azure Functions</li><li>Event Hub</li><li>DynamoDB</li><li>Blazor</li></ul>
+      </div>
+    </article>
+
+    <article class="job reveal">
+      <div class="when">Dec 2017 – Sep 2021</div>
+      <div>
+        <h3>Sr. Software Developer</h3>
+        <div class="org">UnoSquare · FMI</div>
+        <ul>
+          <li>Maintained a cancer-study approval tool: Node.js and Ember back end on Oracle 12c, React-Redux front end, deployed to AWS with Jenkins.</li>
+          <li>Built AWS Lambda and Step Functions workflows to replace the Mirth messaging tool.</li>
+        </ul>
+        <ul class="tags"><li>Node.js</li><li>React-Redux</li><li>AWS Lambda</li><li>Step Functions</li><li>Oracle</li></ul>
+      </div>
+    </article>
+
+    <article class="job reveal">
+      <div class="when">Sep 2014 – Dec 2017</div>
+      <div>
+        <h3>Software Developer</h3>
+        <div class="org">Softtek · Penske</div>
+        <ul>
+          <li>Ported an ASP.NET 1.1/2.0 web app to 4.0, and another to MVC5 with AngularJS.</li>
+          <li>Built a responsive Track &amp; Trace app (MVC5, REST API) that works from desktop to game-console browsers.</li>
+          <li>Built a drag-and-drop load-drop scheduler in vanilla JS with interact.js.</li>
+        </ul>
+        <ul class="tags"><li>ASP.NET MVC5</li><li>Web API</li><li>AngularJS</li><li>Bootstrap</li></ul>
+      </div>
+    </article>
+
+    <article class="job reveal">
+      <div class="when">Jan 2012 – Sep 2012</div>
+      <div>
+        <h3>Software Developer</h3>
+        <div class="org">NPC Business Solution</div>
+        <ul>
+          <li>Credit-management and business-information systems on .NET 4.0 with DevExpress XPO and SQL Server; moved the team to Scrum with Flow.</li>
+        </ul>
+      </div>
+    </article>
+
+    <article class="job reveal">
+      <div class="when">Jul 2007 – Feb 2012</div>
+      <div>
+        <h3>Software Developer</h3>
+        <div class="org">Agua de Hermosillo</div>
+        <ul>
+          <li>Online water-bill payments, a BlackBerry (J2ME) meter-reading app later ported to Android, and the city's SIIF inventory system.</li>
+        </ul>
+        <ul class="tags"><li>VB.NET</li><li>Oracle</li><li>Java</li><li>SOAP</li></ul>
+      </div>
+    </article>
+
+    <details class="reveal" style="color:var(--muted);font-size:.9rem">
+      <summary>Earlier freelance work (2024 – 2025)</summary>
+      <p>Pothole reporting app (TypeScript, Express, Firebase) and a project-management system with client notifications (TypeScript, GraphQL, React, React Native).</p>
+    </details>
+  </section>
+
+  <section id="projects">
+    <h2 class="reveal">Selected projects</h2>
+    <div class="grid">
+      <article class="card reveal">
+        <h3>Bachillo</h3>
+        <p>Crowdsourced map of street bumps in Hermosillo. Users report them with geotagged photos, and an admin verification workflow keeps the data reliable.</p>
+        <ul class="tags"><li>Next.js</li><li>TypeScript</li><li>Express</li><li>Firebase</li><li>Google Maps</li></ul>
+        <a class="more" href="https://github.com/CJX3M/bachillo">View repo →</a>
+      </article>
+      <article class="card reveal">
+        <h3>Tortillería</h3>
+        <p>Quick sales tool to manage the production and sales of corn tortillas, built to learn Angular and Firebase.</p>
+        <ul class="tags"><li>Angular</li><li>TypeScript</li><li>Firebase</li></ul>
+        <a class="more" href="https://github.com/CJX3M/tortilleria">View repo →</a>
+      </article>
+      <article class="card reveal">
+        <h3>ScrapBook</h3>
+        <p>Create scrapbooks from your Facebook photos. Add text and stickers, then share them with friends.</p>
+        <ul class="tags"><li>CSS</li></ul>
+        <a class="more" href="https://github.com/CJX3M/ScrapBook">View repo →</a>
+      </article>
+      <article class="card reveal">
+        <h3>MultiComparte</h3>
+        <p>Share a post to several groups with a single click.</p>
+        <ul class="tags"><li>CSS</li></ul>
+        <a class="more" href="https://github.com/CJX3M/MultiComparte">View repo →</a>
+      </article>
+      <article class="card reveal">
+        <h3>SysBat</h3>
+        <p>System base template to bootstrap new projects.</p>
+        <ul class="tags"><li>C#</li></ul>
+        <a class="more" href="https://github.com/CJX3M/SysBat">View repo →</a>
+      </article>
+    </div>
+  </section>
+
+  <section id="skills" class="skills">
+    <h2 class="reveal">Skills</h2>
+    <dl class="reveal">
+      <dt>Back end</dt><dd>C# / .NET (17 yrs), .NET Core 8, Entity Framework, ASP.NET MVC, Node.js, Express, CQRS, GraphQL, Python, Django</dd>
+      <dt>Front end</dt><dd>HTML5, CSS3, JavaScript, TypeScript, React, Redux, Next.js, React Native, Blazor, Angular</dd>
+      <dt>Data</dt><dd>SQL Server, Oracle, MySQL, DynamoDB, MongoDB, CosmosDB</dd>
+      <dt>Cloud &amp; DevOps</dt><dd>Azure Functions, Event Hub, AWS Lambda, Step Functions, Firebase, CI/CD, Jenkins, Bash, PowerShell</dd>
+      <dt>Currently learning</dt><dd>Machine learning and generative AI on Google Cloud</dd>
+    </dl>
+  </section>
+
+  <section id="credentials">
+    <h2 class="reveal">Credentials &amp; badges</h2>
+    <ul class="badges reveal">
+      <li>Professional Machine Learning Engineer<small>Google Skills · Nov 2026</small></li>
+      <li>ITIL v3 Foundation<small>Softtek University</small></li>
+      <li>Six Sigma Yellow Belt<small>Softtek University</small></li>
+      <li>RunLean Practitioner<small>Softtek University</small></li>
+      <li>ThingWorx IoT Development<small>Softtek University</small></li>
+      <li>Microsoft Learn badges<small><a href="https://learn.microsoft.com/es-es/users/carlosjulinlopezcabaas-2843/#badges-section">View profile</a></small></li>
+      <li>Credly badges<small><a href="https://www.credly.com/users/carlos-lopez.cd5e3518">View profile</a></small></li>
+      <li>Pluralsight<small><a href="https://app.pluralsight.com/profile/carlos-lopez-a7">View profile</a></small></li>
+    </ul>
+    <p class="reveal" style="color:var(--muted);margin-top:24px">B.Sc. Computer Science, Universidad de Sonora (2003 – 2008). English and Spanish, plus conversational Japanese.</p>
+  </section>
+
+  <section id="contact">
+    <h2 class="reveal">Contact</h2>
+    <p class="reveal">Open to senior full-stack and tech lead roles. <a href="mailto:cjlc@hotmail.com">cjlc@hotmail.com</a></p>
+  </section>
+</main>
+
+<footer><div class="wrap">© <span id="y"></span> Carlos Julian Lopez</div></footer>
+
+<script>
+document.documentElement.classList.add('js');
+document.getElementById('y').textContent=new Date().getFullYear();
+var s=document.querySelector('[data-since]');
+if(s){s.textContent=(new Date().getFullYear()-s.dataset.since)+'+'}
+var els=document.querySelectorAll('.reveal');
+if('IntersectionObserver' in window){
+  var io=new IntersectionObserver(function(es){
+    es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}});
+  },{threshold:.12});
+  els.forEach(function(el){io.observe(el)});
+}else{els.forEach(function(el){el.classList.add('in')})}
+</script>
 </body>
 </html>
